@@ -1,0 +1,4 @@
+body{font-family:Arial, Helvetica, sans-serif; width:260px; padding:10px;}
+#result p{margin:6px 0; font-size:13px;}
+button{padding:8px 10px; border-radius:6px; cursor:pointer;}
+#note{font-size:11px;color:#666;margin-top:8px}

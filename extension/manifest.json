@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Simple PhishGuard",
+  "version": "0.1",
+  "description": "Detects possible phishing in open Gmail messages (student demo).",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://mail.google.com/*", "http://localhost:5000/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PhishGuard"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
