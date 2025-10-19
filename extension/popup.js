@@ -1,4 +1,4 @@
-// popup.js - simple student-style code
+
 const scanBtn = document.getElementById("scanBtn");
 const resultDiv = document.getElementById("result");
 
