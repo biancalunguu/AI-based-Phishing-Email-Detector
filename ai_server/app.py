@@ -7,7 +7,6 @@ from openai import OpenAI
 app = Flask(__name__)
 CORS(app)
 
-# Initialize client; expects OPENAI_API_KEY in environment
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 SYSTEM_PROMPT = """ 
@@ -34,7 +33,6 @@ def analyze():
         return jsonify({"error":"no text provided"}), 400
 
     try:
-        # Use chat completions to request a JSON-only answer
         resp = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=build_prompt(text),
@@ -44,7 +42,6 @@ def analyze():
 
         content = resp.choices[0].message["content"].strip()
 
-        # Try to parse returned JSON safely
         import json
         parsed = {}
         try:
